@@ -5,6 +5,7 @@ function nextPage(pageNumber) {
     const next = document.getElementById(`page${pageNumber}`);
 
     current.classList.remove('active');
+    current.classList.add('previous');
     next.classList.add('active');
 
     currentPage = pageNumber;
@@ -15,12 +16,14 @@ function previousPage(pageNumber) {
     const previous = document.getElementById(`page${pageNumber}`);
 
     current.classList.remove('active');
+    current.classList.add('previous');
+    previous.classList.remove('previous');  // Remove this line if previously marked
     previous.classList.add('active');
 
     currentPage = pageNumber;
 }
 
-// Initialize first page as active
+/* Initialize first page */
 document.getElementById('page1').classList.add('active');
 
 
